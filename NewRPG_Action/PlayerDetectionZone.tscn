@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/PlayerDetectionZone.gd" type="Script" id=1]
+
+[node name="PlayerDet" type="Area2D"]
+position = Vector2( 0, -14 )
+scale = Vector2( 1, 0.833335 )
+script = ExtResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_PlayerDet_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_PlayerDet_body_exited"]

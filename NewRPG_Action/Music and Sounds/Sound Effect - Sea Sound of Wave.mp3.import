@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Sound Effect - Sea Sound of Wave.mp3-dc84b823f5bee958d162836acc292344.mp3str"
+
+[deps]
+
+source_file="res://Music and Sounds/Sound Effect - Sea Sound of Wave.mp3"
+dest_files=[ "res://.import/Sound Effect - Sea Sound of Wave.mp3-dc84b823f5bee958d162836acc292344.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

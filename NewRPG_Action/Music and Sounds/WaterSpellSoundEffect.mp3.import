@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/WaterSpellSoundEffect.mp3-5b61bdb35ce65e994971c0ff42e4f246.mp3str"
+
+[deps]
+
+source_file="res://Music and Sounds/WaterSpellSoundEffect.mp3"
+dest_files=[ "res://.import/WaterSpellSoundEffect.mp3-5b61bdb35ce65e994971c0ff42e4f246.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

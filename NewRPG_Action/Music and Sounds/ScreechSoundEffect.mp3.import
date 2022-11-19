@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ScreechSoundEffect.mp3-e2809e042a73bd51c618476373f76445.mp3str"
+
+[deps]
+
+source_file="res://Music and Sounds/ScreechSoundEffect.mp3"
+dest_files=[ "res://.import/ScreechSoundEffect.mp3-e2809e042a73bd51c618476373f76445.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

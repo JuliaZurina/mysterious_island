@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Effects/World/house1.png" type="Texture" id=1]
+[ext_resource path="res://Shadows/LargeShadow.png" type="Texture" id=2]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="LargeShadow" type="Sprite" parent="."]
+position = Vector2( -0.500003, 32 )
+scale = Vector2( 3.84375, 3.2 )
+texture = ExtResource( 2 )
+
+[node name="House1" type="Sprite" parent="."]
+position = Vector2( -14.3693, -11.5781 )
+scale = Vector2( 0.318848, 0.318848 )
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -22.4949, -12.7388 )
+scale = Vector2( 1.16353, 1.16353 )
+polygon = PoolVector2Array( -55.4392, 29.8564, -33.9528, 37.5915, -29.6556, 33.2943, -19.3421, 36.7321, -15.0448, 30.7159, -11.607, 20.4024, -9.88808, 17.8241, -31, 0, -9.88808, 17.8241, -4.73135, 19.543, -5.5908, 27.2781, -6, 28, 14, 38, -5.5908, 28.1375, -7, 33, -14.1854, 50.4834, -2.15298, 46.1861, 14.1767, 53.0617, 21.9118, 58.2185, 42.5387, 48.7645, 48.5549, 52.2023, 56.29, 47.0456, 67.4629, 47.905, 73.4791, 41.0294, 76.9169, 38.451, 74.3386, 34.1537, 72.6197, 26.4186, 71.7602, 22.9808, 69.1818, 18.6835, 70.9007, 0.634953, 68.3224, -3.66232, 50, -7, 23, -6, 3, -12, -0.434069, -12.2569, -21, -14, -53, -17, -58, -10, -54, -12, -54, -8, -58, -2, -55, 0, -57, 8, -55, 14, -65, 20, -62, 22 )

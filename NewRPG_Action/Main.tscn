@@ -1,0 +1,225 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://NewWorld.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Menu/WinMenu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Music and Sounds/AreaChangeBgMusic.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Scripts/World.gd" type="Script" id=5]
+[ext_resource path="res://addons/github-integration/fonts/Roboto-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Effects/World/InteractableObj.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Effects/World/WhiteFlame.tscn" type="PackedScene" id=8]
+[ext_resource path="res://cooldown/CoolDown.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Menu/PauseMenu.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Menu/ControlsMenu.tscn" type="PackedScene" id=11]
+[ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=12]
+[ext_resource path="res://addons/github-integration/fonts/Roboto-Black.ttf" type="DynamicFontData" id=13]
+[ext_resource path="res://Music and Sounds/Sound Effect - Sea Sound of Wave.mp3" type="AudioStream" id=14]
+[ext_resource path="res://Menu/LoseMenu.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Music and Sounds/LoseMusic.mp3" type="AudioStream" id=16]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CursorDefault2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -200, 99 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "cursorMove"
+length = 1.5
+loop = true
+step = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("CursorDefault2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -200, 99 ), Vector2( -170, 95 ), Vector2( -124, 88 ), Vector2( -91, 81 ), Vector2( -39, 69 ), Vector2( 34, 43 ) ]
+}
+
+[sub_resource type="DynamicFont" id=1]
+size = 9
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+outline_size = 1
+font_data = ExtResource( 13 )
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="NewWorld" parent="." instance=ExtResource( 1 )]
+script = null
+
+[node name="CollisionPolygon2D" parent="NewWorld/MapMargin" index="0"]
+polygon = PoolVector2Array( -1342, 334, -1445, 263, -1552, 96, -1571, 37, -1571, -17, -1492, -71, -1427, -122, -1394, -139, -1167, -201, -1069, -264, -955, -310, -881, -342, -805, -346, -796, -411, -725, -399, -782, -430, -741, -464, -824, -503, -898, -547, -919, -571, -913, -627, -899, -668, -756, -734, -723, -744, -639, -772, -535, -806, -587, -874, -606, -942, -597, -973, -524, -1042, -499, -1111, -477, -1182, -461, -1230, -365, -1288, -225, -1359, -6, -1427, 115, -1563, 182, -1590, 1500, -1855, 2159, -1891, 2758, -1837, 3393, -1603, 3879, -1543, 6310, -1139, 7432, -498, 8072, 634, 8104, 1338, 8265, 1744, 8169, 2374, 8083, 3260, 8339, 3997, 8478, 4809, 8478, 5215, 8019, 5588, 7763, 5823, 6812, 6122, 6193, 6133, 5307, 6112, 4175, 6069, 3587, 5930, 2872, 5877, 2434, 5919, 1697, 5823, 1067, 5877, 416, 5877, 192, 5204, -43, 4766, -204, 4339, -738, 3901, -1368, 3741, -1581, 3036, -1474, 2566, -1720, 1851, -1837, 1616, -1784, 1135, -1717, 1004, -1746, 855, -1733, 734, -1727, 563, -1698, 464, -1577, 394, -1498, 369, -1320, 334, -1100, 212, -954, 220, -1150, 451, -1187, 572, -1358, 636, -1409, 772, -1444, 931, -1409, 988, -1260, 1020, -1276, 1147, -1362, 1261, -1393, 1356, -1416, 1483, -1387, 1582, -1300, 1911, -1241, 2234, -933, 2721, -895, 3083, -993, 3083, -1129, 3189, -261, 3680, 290, 4110, 1420, 4104, 1313, 4742, 2417, 4742, 3163, 4885, 3836, 4966, 4204, 5137, 4936, 5586, 5709, 5700, 7110, 5085, 7540, 4813, 7583, 4313, 7368, 3497, 7760, 2939, 7715, 2549, 7733, 1653, 7565, 1156, 7799, 522, 7422, -91, 6778, -761, 5822, -1110, 5118, -1212, 4202, -1336, 3803, -1433, 3123, -1614, 2549, -1738, 1874, -1698, 1257, -1695, 754, -1514, 422, -1529, 244, -1495, 71, -1397, -65, -1333, -231, -1292, -364, -1277, -428, -1190, -469, -1065, -526, -959, -526, -899, -492, -820, -488, -793, -617, -755, -673, -740, -771, -684, -820, -654, -843, -642, -843, -582, -698, -463, -698, -419, -724, -372, -781, -348, -860, -308, -934, -282, -977, -276, -1081, -253, -1154, -195, -1209, -168, -1256, -155, -1362, -129, -1413, -79, -1452, -33, -1480, 11, -1474, 78, -1453, 187, -1421, 252, -1297, 317 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+pause_mode = 2
+
+[node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 12 )]
+
+[node name="CoolDown" parent="CanvasLayer" instance=ExtResource( 9 )]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource( 10 )]
+pause_mode = 0
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource( 11 )]
+
+[node name="AnimatedSprite" parent="CanvasLayer/Control/ColorRect4" index="0"]
+frame = 2
+
+[node name="Sprite" parent="CanvasLayer/Control/ColorRect7" index="0"]
+frame = 4
+
+[node name="AnimatedSprite" parent="CanvasLayer/Control/ColorRect8" index="0"]
+frame = 22
+
+[node name="AnimatedSprite" parent="CanvasLayer/Control/ColorRect10" index="0"]
+frame = 10
+
+[node name="Sprite" parent="CanvasLayer/Control/ColorRect9" index="0"]
+frame = 0
+
+[node name="AnimationPlayer" parent="CanvasLayer/Control/ColorRect9/Node2D" index="0"]
+anims/RESET = SubResource( 2 )
+anims/cursorMove = SubResource( 3 )
+
+[node name="WinLoseCanvas" type="CanvasLayer" parent="."]
+pause_mode = 2
+
+[node name="WinMenu" parent="WinLoseCanvas" instance=ExtResource( 2 )]
+
+[node name="WinMusic" parent="WinLoseCanvas/WinMenu" index="6"]
+autoplay = false
+
+[node name="LoseMenu" parent="WinLoseCanvas" instance=ExtResource( 15 )]
+
+[node name="Pit" parent="." instance=ExtResource( 7 )]
+position = Vector2( -947, 9 )
+
+[node name="CollisionPolygon2D" parent="Pit" index="0"]
+polygon = PoolVector2Array( -167, 11, -169, 38, -145, 56, -104, 55, -80, 32, -83, 13, -115, -10, -139, -4 )
+
+[node name="Polygon2D" parent="Pit" index="1"]
+position = Vector2( -60, -21 )
+scale = Vector2( 0.994549, 0.997609 )
+polygon = PoolVector2Array( -108.93, -0.104172, -19.5312, -0.104172, -21.1149, -10.024, -20.8268, -23.3541, -107.586, -24.0575, -106.581, -11.0264 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" parent="Pit/Polygon2D" index="0"]
+text = "A weird kind of Pit with some carvings on it"
+
+[node name="WhiteFlame" parent="Pit" instance=ExtResource( 8 )]
+position = Vector2( -126, 14 )
+scale = Vector2( 0.421875, 0.421875 )
+frame = 12
+
+[node name="Interact" type="RichTextLabel" parent="Pit"]
+margin_left = -149.0
+margin_top = 59.0
+margin_right = -99.0
+margin_bottom = 73.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.705882, 0.560784, 0.164706, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "Inspect (E)"
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2"]
+polygon = PoolVector2Array( 1231, -1572, 1314, -1522, 1416, -1539, 1473, -1481, 1552, -1503, 1687, -1491, 1870, -1505, 2058, -1474, 2249, -1443, 2356, -1462, 2434, -1531, 2422, -1679, 2339, -1731, 2192, -1757, 1723, -1781, 1587, -1814, 1530, -1781, 1452, -1857, 1259, -1779, 1219, -1669 )
+
+[node name="TreesLabel2" type="Polygon2D" parent="Area2D2"]
+position = Vector2( 436.747, -638.712 )
+scale = Vector2( 0.776842, 0.731094 )
+polygon = PoolVector2Array( 1176.88, -1369.57, 1179.46, -1485.84, 1378.98, -1485.84, 1602.97, -1485.84, 1601.68, -1368.21 )
+
+[node name="Label" type="Label" parent="Area2D2/TreesLabel2"]
+margin_left = 1175.0
+margin_top = -1470.0
+margin_right = 1606.0
+margin_bottom = -1391.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "The trees seem strange,
+ Did something happen to them?????"
+align = 1
+autowrap = true
+
+[node name="TreesLabel" type="Polygon2D" parent="Area2D2"]
+position = Vector2( 1054, -622 )
+scale = Vector2( 0.776842, 0.731094 )
+polygon = PoolVector2Array( 1176.88, -1369.57, 1179.46, -1485.84, 1378.98, -1485.84, 1602.97, -1485.84, 1601.68, -1368.21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Area2D2/TreesLabel"]
+margin_left = 1175.0
+margin_top = -1470.0
+margin_right = 1606.0
+margin_bottom = -1391.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "The trees seem strange,
+ Did something happen to them?????"
+align = 1
+autowrap = true
+
+[node name="Area2D" parent="." instance=ExtResource( 7 )]
+
+[node name="SeaSoundEffect" type="AudioStreamPlayer2D" parent="Area2D"]
+stream = ExtResource( 14 )
+autoplay = true
+attenuation = 4.14106
+
+[node name="LoseMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+
+[node name="ChangeMusic" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChangeMusic"]
+polygon = PoolVector2Array( 883, -1626, 1588, -1299, 2194, -980, 2575, -908, 2655, -277, 3164, -134, 3535, 151, 3697, 389, 3963, 1238, 4305, 1651, 5000, 1460, 5558, 1274, 5755, 1274, 6486, 842, 7266, 471, 7745, 483, 7823, 249, 7523, -272, 7176, -560, 6588, -1022, 5833, -1447, 3849, -1986, 2873, -2106, 2177, -2160, 1464, -2082, 1194, -2052, 871, -1849 )
+
+[node name="AreaChangeSound" type="AudioStreamPlayer" parent="ChangeMusic"]
+stream = ExtResource( 3 )
+
+[connection signal="pressed" from="CanvasLayer/PauseMenu/CenterContainer/VBoxContainer/ResumeButton" to="CanvasLayer/PauseMenu" method="_on_ResumeButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/CenterContainer/VBoxContainer/MainMenuButton" to="CanvasLayer/PauseMenu" method="_on_MainMenuButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/CenterContainer/VBoxContainer/ControlsButton" to="." method="_on_ControlsButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Button" to="." method="_on_Button_pressed"]
+[connection signal="body_entered" from="Pit" to="." method="_on_Pit_body_entered"]
+[connection signal="body_exited" from="Pit" to="." method="_on_Pit_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_Area2D2_body_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="ChangeMusic" to="." method="_on_ChangeMusic_body_entered"]
+[connection signal="body_exited" from="ChangeMusic" to="." method="_on_ChangeMusic_body_exited"]
+
+[editable path="NewWorld"]
+[editable path="CanvasLayer/PauseMenu"]
+[editable path="CanvasLayer/Control"]
+[editable path="WinLoseCanvas/WinMenu"]
+[editable path="WinLoseCanvas/LoseMenu"]
+[editable path="Pit"]
+[editable path="Area2D"]

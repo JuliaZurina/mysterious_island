@@ -1,0 +1,103 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://NPCs/dialig_bg.png" type="Texture" id=1]
+[ext_resource path="res://addons/github-integration/fonts/Roboto-Black.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://NPCs/DialogVictoria.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=2]
+size = 15
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 10
+outline_size = 1
+outline_color = Color( 0.541176, 0.486275, 0.439216, 1 )
+font_data = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_vertical_guides_": [ 7.0 ]
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.594
+anchor_top = 1.0
+anchor_right = 0.594
+anchor_bottom = 1.0
+margin_left = -233.52
+margin_top = -140.0
+margin_right = 231.48
+margin_bottom = -17.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TextureRect"]
+anchor_left = 0.314
+anchor_top = 0.252
+anchor_right = 0.314
+anchor_bottom = 0.252
+margin_left = -66.01
+margin_top = -19.996
+margin_right = 65.99
+margin_bottom = 0.00399971
+
+[node name="name" type="Label" parent="TextureRect/HBoxContainer2"]
+margin_top = 1.0
+margin_right = 72.0
+margin_bottom = 19.0
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "A phwr Gyi"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect"]
+anchor_left = 0.499
+anchor_top = 0.901
+anchor_right = 0.499
+anchor_bottom = 0.901
+margin_left = -198.043
+margin_top = -69.932
+margin_right = 199.957
+margin_bottom = -8.93201
+
+[node name="start" type="Label" parent="TextureRect/HBoxContainer"]
+margin_right = 7.0
+margin_bottom = 19.0
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.701961, 0.698039, 0.321569, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "*"
+
+[node name="Label" type="Label" parent="TextureRect/HBoxContainer"]
+margin_left = 11.0
+margin_right = 398.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.701961, 0.698039, 0.321569, 1 )
+custom_fonts/font = SubResource( 1 )
+autowrap = true
+clip_text = true
+
+[node name="Label" type="Label" parent="TextureRect"]
+margin_left = 253.0
+margin_top = 92.0
+margin_right = 410.0
+margin_bottom = 105.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Press Enter or Space to continue..."
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

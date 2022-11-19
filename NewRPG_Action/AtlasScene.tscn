@@ -1,0 +1,170 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Enemies/Zombie-sprite.png" type="Texture" id=1]
+[ext_resource path="res://addons/sprite_cutter/AtlasScene.gd" type="Script" id=2]
+
+[node name="AtlasScene" type="Node"]
+script = ExtResource( 2 )
+destination_path = "res://Enemies"
+
+[node name="Zombie-sprite" type="Sprite" parent="."]
+position = Vector2( 33, 28 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 10, 8, 31, 33 )
+
+[node name="Zombie-sprite2" type="Sprite" parent="."]
+position = Vector2( 78, 26 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 47, 7, 36, 34 )
+
+[node name="Zombie-sprite3" type="Sprite" parent="."]
+position = Vector2( 115, 29 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 88, 8, 38, 33 )
+
+[node name="Zombie-sprite4" type="Sprite" parent="."]
+position = Vector2( 155, 29 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 147, 8, 32, 33 )
+
+[node name="Zombie-sprite5" type="Sprite" parent="."]
+position = Vector2( 189, 30 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 186, 7, 34, 34 )
+
+[node name="Zombie-sprite6" type="Sprite" parent="."]
+position = Vector2( 218, 32 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 227, 8, 30, 33 )
+
+[node name="Zombie-sprite7" type="Sprite" parent="."]
+position = Vector2( 248, 32 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 265, 6, 31, 35 )
+
+[node name="Zombie-sprite8" type="Sprite" parent="."]
+position = Vector2( 278, 30 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 316, 4, 30, 37 )
+
+[node name="Zombie-sprite9" type="Sprite" parent="."]
+position = Vector2( 308, 30 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 353, 3, 28, 40 )
+
+[node name="Zombie-sprite10" type="Sprite" parent="."]
+position = Vector2( 28, 84 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 386, 2, 32, 41 )
+
+[node name="Zombie-sprite11" type="Sprite" parent="."]
+position = Vector2( 62, 81 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 425, 2, 31, 43 )
+
+[node name="Zombie-sprite12" type="Sprite" parent="."]
+position = Vector2( 97, 81 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 463, 2, 30, 54 )
+
+[node name="Zombie-sprite13" type="Sprite" parent="."]
+position = Vector2( 122, 81 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 12, 50, 29, 51 )
+
+[node name="Zombie-sprite14" type="Sprite" parent="."]
+position = Vector2( 141, 81 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 49, 50, 29, 50 )
+
+[node name="Zombie-sprite15" type="Sprite" parent="."]
+position = Vector2( 179, 81 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 86, 48, 50, 51 )
+
+[node name="Zombie-sprite16" type="Sprite" parent="."]
+position = Vector2( 235, 93 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 145, 79, 52, 20 )
+
+[node name="Zombie-sprite17" type="Sprite" parent="."]
+position = Vector2( 280, 93 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 205, 78, 51, 21 )
+
+[node name="Zombie-sprite18" type="Sprite" parent="."]
+position = Vector2( 27, 131 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 268, 73, 47, 26 )
+
+[node name="Zombie-sprite19" type="Sprite" parent="."]
+position = Vector2( 71, 131 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 325, 64, 36, 35 )
+
+[node name="Zombie-sprite20" type="Sprite" parent="."]
+position = Vector2( 108, 131 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 366, 61, 28, 39 )
+
+[node name="Zombie-sprite21" type="Sprite" parent="."]
+position = Vector2( 135, 131 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 399, 61, 28, 39 )
+
+[node name="Zombie-sprite22" type="Sprite" parent="."]
+position = Vector2( 162, 131 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 432, 61, 25, 39 )
+
+[node name="Zombie-sprite23" type="Sprite" parent="."]
+position = Vector2( 188, 131 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 6, 112, 27, 35 )
+
+[node name="Zombie-sprite24" type="Sprite" parent="."]
+position = Vector2( 211, 131 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 40, 111, 27, 36 )
+
+[node name="Zombie-sprite25" type="Sprite" parent="."]
+position = Vector2( 233, 131 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 75, 111, 29, 36 )
+
+[node name="Zombie-sprite26" type="Sprite" parent="."]
+position = Vector2( 256, 131 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 112, 110, 25, 38 )
+
+[node name="Zombie-sprite27" type="Sprite" parent="."]
+position = Vector2( 285, 131 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 160, 114, 33, 34 )

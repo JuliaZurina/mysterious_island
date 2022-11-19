@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/IceSpellSoundEffect.mp3-df4a17922fff1ef4c8887cdd5edfa180.mp3str"
+
+[deps]
+
+source_file="res://Music and Sounds/IceSpellSoundEffect.mp3"
+dest_files=[ "res://.import/IceSpellSoundEffect.mp3-df4a17922fff1ef4c8887cdd5edfa180.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/WinMenuMusic.mp3-e49972a05f13602e1c9b106b190075cd.mp3str"
+
+[deps]
+
+source_file="res://Music and Sounds/WinMenuMusic.mp3"
+dest_files=[ "res://.import/WinMenuMusic.mp3-e49972a05f13602e1c9b106b190075cd.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

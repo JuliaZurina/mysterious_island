@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/NewWorldBgMusic.mp3-bc59d908f6760956590bb91ebe80086b.mp3str"
+
+[deps]
+
+source_file="res://Music and Sounds/NewWorldBgMusic.mp3"
+dest_files=[ "res://.import/NewWorldBgMusic.mp3-bc59d908f6760956590bb91ebe80086b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

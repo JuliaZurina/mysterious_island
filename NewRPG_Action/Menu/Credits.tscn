@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Menu/Credits.gd" type="Script" id=1]
+[ext_resource path="res://addons/github-integration/fonts/Roboto-Black.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Music and Sounds/BgMusic.mp3" type="AudioStream" id=3]
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="Credits" type="Control"]
+margin_right = 40.0
+margin_bottom = 14.0
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 542.0
+margin_bottom = 309.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 69.0
+margin_top = 49.0
+margin_right = -77.0
+margin_bottom = -69.0
+custom_fonts/normal_font = SubResource( 6 )
+bbcode_enabled = true
+
+[node name="QuitButton" type="Button" parent="."]
+margin_left = 496.0
+margin_top = 272.0
+margin_right = 538.0
+margin_bottom = 297.0
+custom_fonts/font = SubResource( 5 )
+text = "Quit"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[node name="MenuSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

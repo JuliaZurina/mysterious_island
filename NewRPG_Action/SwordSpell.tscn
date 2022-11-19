@@ -1,0 +1,48 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Sword/d0c8eb205db141c5fa2cd4c195957125MiwxUI4eFQKYud3f-1.png" type="Texture" id=1]
+[ext_resource path="res://Sword/d0c8eb205db141c5fa2cd4c195957125MiwxUI4eFQKYud3f-0.png" type="Texture" id=2]
+[ext_resource path="res://Sword/d0c8eb205db141c5fa2cd4c195957125MiwxUI4eFQKYud3f-11.png" type="Texture" id=3]
+[ext_resource path="res://Sword/d0c8eb205db141c5fa2cd4c195957125MiwxUI4eFQKYud3f-16.png" type="Texture" id=4]
+[ext_resource path="res://Sword/d0c8eb205db141c5fa2cd4c195957125MiwxUI4eFQKYud3f-17.png" type="Texture" id=5]
+[ext_resource path="res://Sword/d0c8eb205db141c5fa2cd4c195957125MiwxUI4eFQKYud3f-8.png" type="Texture" id=6]
+[ext_resource path="res://Sword/d0c8eb205db141c5fa2cd4c195957125MiwxUI4eFQKYud3f-15.png" type="Texture" id=7]
+[ext_resource path="res://Sword/d0c8eb205db141c5fa2cd4c195957125MiwxUI4eFQKYud3f-9.png" type="Texture" id=8]
+[ext_resource path="res://Sword/d0c8eb205db141c5fa2cd4c195957125MiwxUI4eFQKYud3f-13.png" type="Texture" id=9]
+[ext_resource path="res://Sword/d0c8eb205db141c5fa2cd4c195957125MiwxUI4eFQKYud3f-18.png" type="Texture" id=10]
+[ext_resource path="res://Sword/d0c8eb205db141c5fa2cd4c195957125MiwxUI4eFQKYud3f-19.png" type="Texture" id=11]
+[ext_resource path="res://Sword/d0c8eb205db141c5fa2cd4c195957125MiwxUI4eFQKYud3f-6.png" type="Texture" id=12]
+[ext_resource path="res://Sword/d0c8eb205db141c5fa2cd4c195957125MiwxUI4eFQKYud3f-10.png" type="Texture" id=13]
+[ext_resource path="res://Sword/d0c8eb205db141c5fa2cd4c195957125MiwxUI4eFQKYud3f-7.png" type="Texture" id=14]
+[ext_resource path="res://Sword/d0c8eb205db141c5fa2cd4c195957125MiwxUI4eFQKYud3f-12.png" type="Texture" id=15]
+[ext_resource path="res://Sword/d0c8eb205db141c5fa2cd4c195957125MiwxUI4eFQKYud3f-14.png" type="Texture" id=16]
+[ext_resource path="res://Sword/d0c8eb205db141c5fa2cd4c195957125MiwxUI4eFQKYud3f-4.png" type="Texture" id=17]
+[ext_resource path="res://Sword/d0c8eb205db141c5fa2cd4c195957125MiwxUI4eFQKYud3f-5.png" type="Texture" id=18]
+[ext_resource path="res://Sword/d0c8eb205db141c5fa2cd4c195957125MiwxUI4eFQKYud3f-2.png" type="Texture" id=19]
+[ext_resource path="res://Sword/d0c8eb205db141c5fa2cd4c195957125MiwxUI4eFQKYud3f-3.png" type="Texture" id=20]
+[ext_resource path="res://Scripts/SwordSpell.gd" type="Script" id=21]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 13 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 9 ), ExtResource( 16 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 13 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 9 ), ExtResource( 16 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 16.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 10.0499
+
+[node name="SpinningSword" type="KinematicBody2D"]
+script = ExtResource( 21 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 4.76837e-07 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 1 )
+frame = 20
+playing = true
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
